@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Background image-->
+<div class="hero-image">
+  <div class="hero-flex">
+  <div class="img-div">
+    <img src="https://cdn.glitch.com/5dc1d036-6a21-4dd5-836f-78171755c414%2FLogo%20Loop.gif?v=1596494458345">
+  </div>
+  <div class="text-div">
+  <h1><strong><span style="color: white">Katrina</span><span style="color: #688781">Support</span></strong></h1>
+  <h3><span style="color: white">POST-HURRICANE RELIEF</span></h3>
+  <div class="clear"></div>
+  <h2>Providing calm in the eye of the storm</h2>
+  </div>
+  </div>
+</div>
+<section id="impact-section">
+  <h2> The Impact of Hurricane Katrina </h2>
+  <p>Hurricane Katrina is quickly rising as one of the US's deadliest tropical cyclones, devastating hundreds of communities.</p>
+  <div class="carousel">
+  <div id="Impact" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#Impact" data-slide-to="0" class="active"></li>
+      <li data-target="#Impact" data-slide-to="1"></li>
+      <li data-target="#Impact" data-slide-to="2"></li>
+      <li data-target="#Impact" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="https://cdn.glitch.com/5dc1d036-6a21-4dd5-836f-78171755c414%2F1.png?v=1596506168728">
+      </div>
+
+      <div class="item">
+        <img src="https://cdn.glitch.com/5dc1d036-6a21-4dd5-836f-78171755c414%2F2.png?v=1596506172111">
+      </div>
+    
+      <div class="item">
+        <img src="https://cdn.glitch.com/5dc1d036-6a21-4dd5-836f-78171755c414%2F3.png?v=1596506176269">
+      </div>
+
+      <div class="item">
+        <img src="https://cdn.glitch.com/5dc1d036-6a21-4dd5-836f-78171755c414%2F4.png?v=1596506179056">
+    </div>
+    <a class="left carousel-control" href="#Impact" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#Impact" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
+</div>
+</section>
+
+
+<section id="feature-section">
+  <h2>Our Features</h2>
+  <ul id="features-flex">
+     <li class="feature1">
+       <img src="https://image.flaticon.com/icons/svg/3050/3050400.svg">
+       <h4>Send Services</h4>
+          <p>Organizations can send resources and provide services to certain locations.</p>
+           </li>
+            <li class="feature2">
+                <img src="https://image.flaticon.com/icons/svg/3079/3079011.svg">
+                <h4>View Hurricane Prediction Model</h4>
+                <p>Predicts the most heavily affected areas based on several factors.</p>
+            </li>
+            <li class="feature3">
+                <img src="https://image.flaticon.com/icons/svg/3011/3011537.svg">
+                <h4>Retrieve Patient's Medical Information</h4>
+                <p>A blockchain transaction system that allows doctors to view patient's medical records.</p>
+            </li>
+            <div class="clear"></div>
+        </ul>
+      
+</section>
+{% endblock %}

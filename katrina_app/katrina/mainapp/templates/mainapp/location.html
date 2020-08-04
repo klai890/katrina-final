@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+  *{
+    font-family: Avenir Next;
+  }
+  .new-resource{
+    display: block;
+    margin: 1.25rem 0;
+    padding: .5rem 1rem;
+    background: #eee;
+    border: none;
+    width: 100%;
+    font-size: 1.35rem;
+  }
+  .location-name{
+    font-family: Avenir;
+    font-weight: bold;
+  }
+  .content{
+    margin: 2.5rem;
+  }
+  .submit{
+    border: none;
+    background: rgb(104,135,129);
+    color: white;
+    padding: .5rem 1rem;
+  }
+  .location-title{
+    font-weight:normal;
+  }
+  .resource{
+    text-indent: 3rem;
+  }
+</style>
+<section class="content">
+      <h1 class='location-name'>{{ location.name }}</h1>
+      <p>Estimated Casualities: {{location.prediction}}</p>
+      <h3 class='location-title'>Resources Delivered</h3>
+      <div class="resources">
+        {% for resource in resources %}
+        <li class="resource">{{resource}}</li>
+        {% endfor %}
+      </div>
+      <h3 class='location-title'>Send Resources</h3>
+
+      <form action="{% url 'send' location.id %}" method='post'> {% csrf_token %}
+        <input type="text" name='resource1' class='new-resource' placeholder='Resource' maxlength='200'>
+        <input type="text" name='resource2' class='new-resource' placeholder='Resource' maxlength='200'>
+        <input type="text" name='resource3' class='new-resource' placeholder='Resource' maxlength='200'>
+        <button class="submit" type='submit'>Send</button>
+      </form>
+    </section>
+    {% if message %}
+      {{message}}
+    {% endif %}
+{% endblock %}

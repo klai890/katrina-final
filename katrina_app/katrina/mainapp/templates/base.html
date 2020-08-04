@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title> Katrina Support</title>
+    <link rel="icon" href="https://cdn.glitch.com/5dc1d036-6a21-4dd5-836f-78171755c414%2Ffavicon-16x16.png?v=1596506980260">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <style>
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,500;1,700&display=swap');
+*{
+  /* remove margin from all elements
+  so that nav stretches fullscreen */
+  margin: 0;
+  outline: none;
+}
+body{
+  font-family: 'Raleway';
+}
+p {
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+h1 {
+    font-family: 'Crete Round', serif;
+    font-weight: bold;
+    color: #444;
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+h4 {
+    font-size: 20px;
+    color: #444;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/*outer navigation*/
+.navigation {
+  height: 60px;
+  background-color: #1D1E2C;
+}
+/*logo*/
+.brand {
+  position: absolute;
+  padding-left: 40px;
+  float: left;
+  line-height: 60px;
+  text-transform: uppercase;
+  font-size: 1.4em;
+}
+.brand a, .brand a:visited{
+  text-decoration: none;
+  color: white;
+}
+.nav-container{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+nav{
+  float: right;
+}
+.nav-list{
+  list-style: None;
+  padding: 0;
+  margin: 0;
+}
+.nav-list li{
+  float: left;
+  position: relative;
+}
+.nav-list a, .nav-list a:visited {
+  display: block;
+  padding: 0 20px;
+  line-height: 60px;
+  background: #1D1E2C;
+  color: white;
+  text-decoration: none;
+}
+.nav-list a:hover {
+  background: #7F8189;
+}
+
+/* Mobile navigation */
+
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background:  #1D1E2C);
+  height: 60px;
+  width: 60px;
+}
+/*dropdown only visible on mobile*/
+@media only screen and (max-width: 798px){
+.nav-mobile{
+  display: block;
+}
+nav{
+  width: 100%;
+  padding: 60px 0 15px;
+}
+.nav-list{
+  display: none;
+}
+.nav-list li{
+  float: none;
+}
+.nav-list li a{
+   padding: 15px;
+  line-height: 20px;
+}
+
+/*hamburger icon*/
+#nav-toggle {
+  position: absolute;
+  left: 14px;
+  top: 19px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+}
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background:white;
+  position: absolute;
+  display: block;
+  content: "";
+  transition: all 300ms ease-in-out;
+}
+#nav-toggle span:before {
+  top: -10px;
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
+}
+
+.hero-image {
+    height: 450px;
+    padding-top: 30px;
+    background: url('https://cdn.glitch.com/5dc1d036-6a21-4dd5-836f-78171755c414%2FHurricane.png?v=1596496256356');
+    background-size: cover;
+    background-position: center;
+    
+}
+/* positioning the title*/
+.hero-flex{
+  display: inline-flex;
+  flex-direction: row;
+  align-content: center;
+}
+.img-div img{
+  max-width: 500px;
+  height: auto;
+
+}
+.text-div, .img-div{
+  margin: 0 -50px;
+}
+.text-div{
+margin-top: 40px;
+}
+
+
+.hero-image h3{
+   clear: both;
+   float: left;
+   background-color: black;
+   padding: 10px;
+   font-weight: 300;
+}
+.clear{
+  clear: both;
+}
+.hero-image h2{
+  margin-top: 10px;
+  color: white;
+  font-weight: 200;
+}
+
+
+/*flexbox for the features*/
+#features-flex{
+  display: flex;
+  justify-content: center;
+  align-content:flex-start;
+  align-items: center;
+flex-direction: row;
+flex-wrap: wrap;
+}
+.feature1,.feature2,.feature3{
+  text-align: center;
+  list-style-type: none;
+  width: 275px;
+  height: auto;
+  margin: 0 40px;
+}
+#feature-section h2{
+  font-size: 30px;
+  color:#688781;
+  margin: 30px;
+  text-align: center;
+}
+#feature-section h4{
+  margin-top: 20px;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: #688781;
+  text-decoration-thickness: 5px;
+}
+#feature-section img{
+  width: 70px;
+  height: auto;
+}
+
+
+
+#impact-section h2{
+  display: block;
+  font-size: 30px;
+  color:#688781;
+  margin: 50px auto 10px auto;
+  width: 600px;
+  border-bottom: 1px solid #688781;
+  padding: 0 0 20px 0;
+  text-align: center;
+}
+
+#impact-section p{
+  text-align: center;
+}
+
+
+
+/*style for carousel*/
+.carousel{
+  width: 800px;
+  margin: 0 auto;
+}
+
+.item{
+  width: 100;
+}
+
+/* location styling home page */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,500;1,700&display=swap');
+
+*{
+  font-family: 'Raleway'
+}
+
+.location{
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 1px solid black;
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem; 
+}
+
+.location a{
+  color: initial;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.location a:hover{
+  color: blue;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <section class="navigation">
+    <div class="nav-container">
+      <div class="brand">
+       <a href="{% url 'index' %}""><img src="https://cdn.glitch.com/5dc1d036-6a21-4dd5-836f-78171755c414%2FKatrinaSupport%203.png?v=1596482973897" style="max-width:45%; margin:5px 0px" alt="logo"></a>
+      </div>
+      <nav>
+        <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+        <ul class="nav-list">
+          <li><a href="{% url 'index'%}">Home</a></li>
+          <li><a href="{% url 'howtohelp'%}">How to Help</a> </li>
+          <li><a href="{% url 'predict'%}">Hurricane Prediction</a></li>
+      </nav>
+    </div>
+    </section>
+   
+    {% block content %}
+    {% endblock %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    (function($) { // Begin jQuery
+      $(function() { // DOM ready
+    // Toggle open and close nav styles on click
+        $('#nav-toggle').click(function() {
+          $('nav ul').slideToggle();
+        });
+        // Hamburger to X toggle
+        $('#nav-toggle').on('click', function() {
+          this.classList.toggle('active');
+        });
+      }); // end DOM ready
+    })(jQuery); // end jQuery
+    </script>
+  </body>
+</html>

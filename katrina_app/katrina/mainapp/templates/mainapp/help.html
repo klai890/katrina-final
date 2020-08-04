@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+</style>
+    <section class="dashboard">
+    {% for data in dataset %}
+    <div class="location">
+      <a href='{% url "location" data.id %}'>{{data.name}}</a>
+      <p>Estimated Casualities: {{data.prediction}}</p>
+    </div>
+    {% endfor %}
+    </section>
+    <footer style='margin: 2rem; text-align: center; font-family: Avenir'>All the results obtained are calculated using a machine learning linear regression model which has been given minimal data for training. For testing purposes only.</footer>
+{% endblock %}

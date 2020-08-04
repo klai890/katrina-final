@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content %}
+    <style>
+        form {
+            margin: 2.5rem auto;
+            width: 40%;
+        }
+        input{
+            border: 1px solid #aaa;
+        }
+        .result {
+            margin: 1rem auto;
+            width: 35%;
+            border: 1px solid #ccc;
+        }
+        footer{
+            margin: 0 1rem;
+            text-align: center;
+        }
+        .submit{
+            background: #688781;
+            font-family: Avenir Next, Avenir, Arial;
+            border: none;
+            color: white;
+            padding: .5rem 1rem;
+        }
+    </style>
+    <form action="{% url 'predict' %}" method="POST"> {% csrf_token %}
+        <fieldset>
+            <legend>Input the current values:</legend>
+            Hurricane Latitude:
+            <input name="Hlat" type="number" required /> N
+            <br>
+            <br> Hurricane Longitude:
+            <input name="Hlong" type="number" required> W
+            <br>
+            <br> Maximum Sustained Winds (in Knots):
+            <input name="MaxSusWinds" type="number" required>
+            <br>
+            <br> City Latitude:
+            <input name="Clat" type="number" required> N
+            <br>
+            <br> City Longitude:
+            <input name="Clong" type="number" required> W
+            <br>
+            <br> City Population:
+            <input name="Pop" type="number" required>
+            <br>
+            <br> City Area in square km:
+            <input name="Area" type="number" required>
+            <br>
+            <br>
+            <input type="submit" class='submit'>
+        </fieldset>
+    </form>
+    <br>
+    <div class="result" align="center">
+        <!-- % if result %
+        % for variable, value in original_input.items() %
+            <b> variable </b> :  value 
+        % endfor %
+        <br>
+        <br> Predicted number of casualties in city:
+           <p style="font-size:50px"> result </p>
+    % endif % -->
+    {% if result %}
+            <legend>Predicted Casualities:</legend>
+            <h1>{{result}}</h1>
+    {% endif %}
+    </div>
+    <footer>All the results obtained are calculated using a machine learning linear regression model which has been given minimal data for training. For testing purposes only.</footer>
+{% endblock %}
